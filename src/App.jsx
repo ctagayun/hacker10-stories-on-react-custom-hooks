@@ -1,5 +1,15 @@
 /*================================================================
  React Custom Hooks (Advanced)
+    https://www.robinwieruch.de/react-custom-hook/
+
+    Hooks gave function components the ability to use state and side-effects 
+ with built-in Hooks such as React's useState Hook and React's useEffect Hook.
+
+   There are only a handful built-in Hooks (e.g. useReducer, useCallback, 
+ useMemo, useContext) provided by React though. However, by using these
+ Hooks as a foundation, React developers can create their own hooks 
+ called custom hooks.
+
  We will use the two hooks that we already know to create 
  a new custom hook called useStorageState which will keep 
  the component's state in sync with the browser's local 
@@ -24,6 +34,7 @@ import * as React from 'react';
   //So far this custom hook is just function around useState and useEffect.
   //What's missing is providing an initial state and returning the values
   //that are needed by the App component as an array.
+  
   const useStorageState = (key, initialState) => {
      const [value, setValue] = React.useState(
         localStorage.getItem('key') || initialState //<-- this simply provides 
