@@ -80,9 +80,10 @@ import * as React from 'react';
         //Again to make it reusable, change 
         //localStorage.setItem('search', searchTerm), [searchTerm]; to'value'
         
-
      //And second, the returned values are returned as an array.
-     //change [searchTerm, setSearchTerm] -->[value, value]
+     //change [searchTerm, setSearchTerm] -->[value , setValue]
+     //Again: searchTerm is the state. setSearchTerm is the state updater
+     //function.
      return [value, setValue]; 
 
   } //EOF create custom hook
