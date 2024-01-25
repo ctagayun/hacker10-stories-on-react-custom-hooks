@@ -35,6 +35,19 @@ import * as React from 'react';
   //What's missing is providing an initial state and returning the values
   //that are needed by the App component as an array.
   
+  //This hook will keep the component's state in sync with the browser's 
+  //local storage.  
+  //using the the parameter key. it goes to the local storage
+     //to  fetch the state if not found uses initialState and 
+     //assigns it to "value" otherwise the state fetched from
+     //local storage will be used and assigned to 'value
+     //   Note: 1. value is the generic name for state
+     //         2. setValue is the name of the function that will 
+     //            update the 'value'
+     //This code here: 
+     //   React.useState(
+     //    localStorage.getItem('key') || initialState
+     //is simply a logic to determine what state to use.
   const useStorageState = (key, initialState) => {
      const [value, setValue] = React.useState(
         localStorage.getItem('key') || initialState //<-- this simply provides 
